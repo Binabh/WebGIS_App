@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>District wise population map of Nepal</title>
+    <link rel="stylesheet" href="css/ol.css" type="text/css">
+
+    <script src="js/ol.js"></script>
+
+    <link rel="stylesheet" href="css/ol-layerswitcher.css" type="text/css">
+
+    <script src="js/ol-layerswitcher.js"></script>
+    <!-- Style CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="map-title">
+                    <h1>District wise population map of Nepal<h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div id="map" class="map">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="map-side-box">
+                    <h3>Legend</h3>
+                    <h4>(For Total Population map)</h4>
+                    <img src="http://localhost:8000/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=District_population:Nepal_District"
+                        alt="legend goes here">
+                    <h3>Legend</h3>
+                    <h4>(For Male/Female Population map)</h4>
+                    <img src="http://localhost:8000/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&Layer=District_population:malepopulation"
+                        alt="legend goes here">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Group({
+                    title: 'Base maps',
+                    layers: [
+                        new ol.layer.Tile({
+                            title: 'Bing Maps',
+                            type: 'base',
+                            visible: false,
+                            source: new ol.source.BingMaps({
+                                key: 'AsWYs-oqv8Fjm9wC5OM7F9Zv5JPrTlboc3r2idqQSVn00L84tZLlzKNiGO07NI6a',
+                                imagerySet: 'AerialWithLabelsOnDemand'
+                            })
+                        }),
+                        new ol.layer.Tile({
+                            title: 'Open Street Maps',
+                            type: 'base',
+                            visible: true,
+                            source: new ol.source.OSM()
+                        })
+                    ]
+                }),
+                new ol.layer.Group({
+                    title: 'Population maps',
+                    layers: [
+                        new ol.layer.Image({
+                            title: 'Total Population map',
+                            type: 'populationmap',
+                            visible: true,
+                            source: new ol.source.ImageWMS({
+                                url: 'http://localhost:8000/geoserver/District_population/wms',
+                                params: {
+                                    'LAYERS': 'District_population:Nepal_District'
+                                },
+                                serverType: 'geoserver',
+                            })
+                        }),
+                        new ol.layer.Image({
+                            title: 'Male Population map',
+                            type: 'populationmap',
+                            visible: false,
+                            source: new ol.source.ImageWMS({
+                                url: 'http://localhost:8000/geoserver/District_population/wms',
+                                params: {
+                                    'LAYERS': 'District_population:malepopulation'
+                                },
+                                serverType: 'geoserver',
+                            })
+                        }),
+
+                        new ol.layer.Image({
+                            title: 'Female Population map',
+                            type: 'populationmap',
+                            visible: false,
+                            source: new ol.source.ImageWMS({
+                                url: 'http://localhost:8000/geoserver/District_population/wms',
+                                params: {
+                                    'LAYERS': 'District_population:femalepopulation'
+                                },
+                                serverType: 'geoserver',
+                            })
+                        })
+
+                    ]
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.transform([84.10040, 28.11069], 'EPSG:4326', 'EPSG:3857'),
+                zoom: 7
+            })
+
+        });
+
+        var layerSwitcher = new ol.control.LayerSwitcher({
+            tipLabel: 'Légende' // Optional label for button
+        });
+        map.addControl(layerSwitcher);
+    </script>
+</body>
+
+</html>

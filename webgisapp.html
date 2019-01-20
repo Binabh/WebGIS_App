@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Binabh Devkota | Web GIS Project</title>
+
+    <!-- favicon -->
+    <link href="favicon.png" rel=icon>
+
+    <!-- web-fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar">
+    <div id="main-wrapper">
+        <!-- Page Preloader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="status-mes"></div>
+            </div>
+        </div>
+
+        <div class="columns-block">
+            <div class="left-col-block-toc blocks">
+                <header class="header">
+                    <div class="table-of-contents">
+                        <h1>Table of contents</h1>
+                        <ul class="toc-list">
+                            <a target="_blank" href="landcover.html"><li>Landcover 2010 map of Nepal (ICIMOD)</li></a>
+                            <a target="_blank" href="populationmap.html"><li>District Population Map of Nepal</li></a>
+                            <a target="_blank" href="boundarymap.html"><li>Administrative boundary map of local levels</li></a>
+                            <a target="_blank" href="waterways.html"><li>Waterways Map of Nepal</li></a>
+                        </ul>
+                    </div>
+                    <div class="toc-img"></div>
+                </header>
+                <!-- .header-->
+            </div>
+
+
+            <div class="right-col-block blocks">
+
+                <section class="section-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul id="navbar">
+                                    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                    <li><a href="personal.html"><i class="fa fa-user"></i> Personal Page</a></li>
+                                    <li class="active"><a href="webgisapp.html"><i class="fa fa-globe"></i> Web GIS App</a></li>
+                                    <li><a href="contact.html"><i class="fa fa-phone"></i> Contact Me</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="intro section-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="section-title">
+                                    <h2>Web GIS</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <p>
+                                    A geographic information system (GIS) is a system designed to capture, store,
+                                    manipulate, analyze, manage, and present spatial or geographic data. GIS
+                                    applications are tools that allow users to create interactive queries (user-created
+                                    searches), analyze spatial information, edit data in maps, and present the results
+                                    of all these operations.
+                                </p>
+                                <p>
+                                    Web GIS is a type of distributed information system, comprising at least a server
+                                    and a client, where the server is a GIS server and the client is a web browser,
+                                    desktop application, or mobile application. In its simplest form, web GIS can be
+                                    defined as any GIS that uses web technology to communicate between a server and a
+                                    client.
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="section-title">
+                                    <h2>Types of web services</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="section-title">
+                                    <h3>WMS (Web Map Service)</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="section-title">
+                                    <h3>WFS (Web Feature Service)</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="section-title">
+                                    <h3>WCS (Web Coverage Service)</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p>
+                                    <ul class="web-services">
+                                        <li>Provides a “simple HTTP interface for requesting georeferenced map images”
+                                            (OGC)</li>
+                                        <li>The request defines the spatial extent and layers to be returned</li>
+                                        <li>A “map” is a digital image of geographic information</li>
+                                        <li>A map is not the data itself</li>
+                                        <li>Usually rendered in PNG, JPEG, or GIF format, sometimes SVG</li>
+                                        <li>Both vector and raster data supported</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    There are two subclasses of WMS
+                                    <ul class="web-services">
+                                        <li>GetCapabilities</li>
+                                        <li>GetMap</li>
+                                        Queryable WMS is same as Basic but also supports the optional GetFeatureInfo
+                                        operation.
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <p>
+                                    The WFS standard defines interfaces and operations for data access and manipulation
+                                    on a set of geographic features, including:
+                                    <ul class="web-services">
+                                        <li>Get or Query features based on spatial and non-spatial constraints</li>
+                                        <li>Create a new feature instance</li>
+                                        <li>Get a description of the properties of features</li>
+                                        <li>Delete a feature instance</li>
+                                        <li>Update a feature instance</li>
+                                        <li>Lock a feature instance</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    While a WMS returns an image of a map, WFS returns the actual features. It can be
+                                    used with vector data
+                                    and it allows analysis and editing of the data along with ability to filter and
+                                    query data.
+                                    Features are transported in GML format and data may come from multiple sources
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <p>
+                                    WCS is a web service Used to deliver raster data over internet.
+                                    it is different from WCS because coverages may be used for spatial analysis
+                                    (whereas a WMS only returns a static image)
+                                </p>
+                                <p>
+                                    Basic WCS operations are:
+                                    <ul class="web-serveces">
+                                        <li>Get Capabilities: Returns an XML document describing the service and
+                                            coverage within</li>
+                                        <li>Describe Coverage: Returns an XML document, containing a full description
+                                            of one or more coverages within a WCS. Provides information such as spatial
+                                            extent, spatial resolution, cell size, spatial reference system</li>
+                                        <li>Get Coverage: Returns a requested coverage in a known coverage format (e.g.
+                                            GeoTIFF) Similar to WMS GetMap and WFS GetFeature requests</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="section-title">
+                                    <h2>Web Services using Open Layer Library</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <p>
+                                    OpenLayers is an open-source JavaScript library for displaying map data in web
+                                    browsers. It provides an API for building rich web-based geographic applications.
+                                    OpenLayers supports GeoRSS, KML (Keyhole Markup Language), Geography Markup
+                                    Language (GML), GeoJSON and map data from any source using OGC-standards as Web Map
+                                    Service (WMS) or Web Feature Service (WFS). However, there is no built-in support
+                                    for WCS in OpenLayers and we need to export WCS layers as WMS to view them in
+                                    browsers.
+                                </p>
+                                <p>
+                                    To know more about the services and look at the examples the official
+                                    docummentation and examples from openlayers website can be consulted using the
+                                    links below:<br>
+                                    <a target="_blank" class="btn btn-info" href="https://openlayers.org/en/latest/examples/wms-image.html">Single
+                                        Image WMS using openlayers</a><br><br>
+                                    <a target="_blank" class="btn btn-info" href="https://openlayers.org/en/latest/examples/wms-tiled.html">Tiled
+                                        Image WMS using openlayers</a><br><br>
+                                    <a target="_blank" class="btn btn-info" href="https://openlayers.org/en/latest/examples/vector-wfs.html">Vector
+                                        WFS using openlayers</a><br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="footer">
+                    <div class="copyright-section">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="copytext">Developed by Binabh Devkota</div>
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!-- .container-fluid -->
+                    </div>
+                    <!-- .copyright-section -->
+                </footer>
+                <!-- .footer -->
+            </div>
+            <!-- .right-col-block -->
+        </div>
+        <!-- .columns-block -->
+    </div>
+    <!-- #main-wrapper -->
+
+    <!-- jquery -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+Id lc
+1 Forest
+2 Shrubs
+3 Grass
+4 Agriculture
+5 Bare Area
+6 Built-Up
+7 Waterbody
+8 Snow
